@@ -83,7 +83,7 @@ RSpec.describe 'Task', type: :system do
 
       it '既にステータスが完了のタスクのステータスを変更した場合、Taskの完了日が更新されないこと' do
         # TODO: traitを利用してください
-        task = create(:task, :done_task, project_id: project.id)
+        task = create(:task, :done, project_id: project.id)
         visit edit_project_task_path(project, task)
         select 'todo', from: 'Status'
         click_button 'Update Task'
